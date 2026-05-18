@@ -1,9 +1,9 @@
 package events
 
-type UserRegisteredUserEvent struct {
+type UserRegisteredEvent struct {
 	BaseEvent
 }
 
-func (UserRegisteredUserEvent) ID() EventID {
+func (UserRegisteredEvent) ID() EventID {
 	return UserRegisteredEventID
 }

@@ -35,3 +35,8 @@ func (s *InMemorySessionStore) Create(userID int) (*models.PlayerSession, error)
 	}
 	return s.sessions[userID], nil
 }
+
+func (s *InMemorySessionStore) Save(session *models.PlayerSession) error {
+	s.sessions[session.ID] = session
+	return nil
+}

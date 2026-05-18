@@ -24,7 +24,14 @@ func (e *Engine) Process(event events.Event) ([]events.Event, error) {
 
 	if event.ID() == events.UserRegisteredEventID {
 		session, _ = e.sessionRepo.Create(event.GetUserID())
-		return nil, nil
+		return []events.Event{
+			events.UserRegisteredEvent{
+				BaseEvent: events.BaseEvent{
+					Timestamp: event.GetTimestamp(),
+					UserID:    event.GetUserID(),
+				},
+			},
+		}, nil
 	}
 
 	session, err := e.sessionRepo.Get(event.GetUserID())
