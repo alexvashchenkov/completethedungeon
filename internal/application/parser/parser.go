@@ -14,11 +14,11 @@ type Parser struct {
 	factory   *EventFactory
 }
 
-func NewParser(tokenizer *Tokenizer, rawParser *RawParser, factory *EventFactory) *Parser {
+func NewParser() *Parser {
 	return &Parser{
-		tokenizer: tokenizer,
-		rawParser: rawParser,
-		factory:   factory,
+		tokenizer: NewTokenizer(),
+		rawParser: NewRawParser(),
+		factory:   NewEventFactory(),
 	}
 }
 

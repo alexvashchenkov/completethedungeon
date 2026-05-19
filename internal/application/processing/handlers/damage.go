@@ -25,6 +25,10 @@ func (h *DamageHandler) Handle(session *models.PlayerSession, ev events.Event) (
 	if session.HP <= 0 {
 		session.HP = 0
 		session.State = models.PlayerStateDead
+		session.DungeonFinishedAt = e.Timestamp
+		if !session.DungeonEnteredAt.IsZero() {
+			session.Metrics.TotalDungeonDuration = e.Timestamp.Sub(session.DungeonEnteredAt)
+		}
 		out = append(out, events.UserDiedEvent{BaseEvent: events.BaseEvent{Timestamp: e.Timestamp, UserID: e.UserID}})
 	}
 	return out, nil

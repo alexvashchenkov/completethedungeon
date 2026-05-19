@@ -5,12 +5,12 @@ import "time"
 type PlayerState int
 
 const (
-	PlayerStateRegistered   PlayerState = 1
-	PlayerStateInDungeon    PlayerState = 2
-	PlayerStateDisqualified PlayerState = 3
-	PlayerStateDead         PlayerState = 4
-	PlayerStateLeftDungeon  PlayerState = 5
-	PlayerStateCompleted    PlayerState = 6
+	PlayerStateRegistered PlayerState = iota
+	PlayerStateInDungeon
+	PlayerStateDisqualified
+	PlayerStateDead
+	PlayerStateLeftDungeon
+	PlayerStateCompleted
 )
 
 type PlayerSession struct {
@@ -20,6 +20,8 @@ type PlayerSession struct {
 
 	HP int
 
+	DungeonEnteredAt time.Time
+
 	CurrentFloor int
 
 	CurrentFloorStartedAt time.Time
@@ -28,14 +30,20 @@ type PlayerSession struct {
 
 	MonstersKilledOnFloor int
 
-	DungeonEnteredAt time.Time
+	BossKilled bool
+
+	BossKilledAt time.Time
 
 	DungeonFinishedAt time.Time
+
+	DungeonLeftAt time.Time
 
 	Metrics Metrics
 }
 
 type Metrics struct {
+	FloorsCompleted int
+
 	FloorDurations []time.Duration
 
 	BossDuration time.Duration

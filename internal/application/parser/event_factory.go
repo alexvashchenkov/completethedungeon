@@ -19,6 +19,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 		}, nil
 	case events.UserEnteredDungeonEventID:
@@ -26,6 +27,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 		}, nil
 
@@ -34,6 +36,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 		}, nil
 
@@ -42,6 +45,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 		}, nil
 
@@ -50,6 +54,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 		}, nil
 
@@ -58,6 +63,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 		}, nil
 
@@ -66,6 +72,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 		}, nil
 
@@ -74,6 +81,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 		}, nil
 
@@ -82,6 +90,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 			Reason: rawEvent.Extra,
 		}, nil
@@ -95,6 +104,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 			Amount: amount,
 		}, nil
@@ -109,6 +119,7 @@ func (e *EventFactory) Build(rawEvent *RawEvent) (events.Event, error) {
 			BaseEvent: events.BaseEvent{
 				Timestamp: rawEvent.Timestamp,
 				UserID:    rawEvent.UserID,
+				EventID:   rawEvent.EventID,
 			},
 			Amount: amount,
 		}, nil

@@ -14,6 +14,14 @@ func NewInMemorySessionStore() *InMemorySessionStore {
 	}
 }
 
+func (s *InMemorySessionStore) GetAll() ([]*models.PlayerSession, error) {
+	out := make([]*models.PlayerSession, 0, len(s.sessions))
+	for _, session := range s.sessions {
+		out = append(out, session)
+	}
+	return out, nil
+}
+
 func (s *InMemorySessionStore) Get(userID int) (*models.PlayerSession, error) {
 	session, exists := s.sessions[userID]
 	if !exists {

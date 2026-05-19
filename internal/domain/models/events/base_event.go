@@ -5,18 +5,18 @@ import "time"
 type EventID int
 
 const (
-	BaseEventID                        EventID = 0
-	UserRegisteredEventID              EventID = 1
-	UserEnteredDungeonEventID          EventID = 2
-	UserKilledMonsterEventID           EventID = 3
-	UserWentToNextFloorEventID         EventID = 4
-	UserWentToPreviousFloorEventID     EventID = 5
-	UserEnteredBossFloorEventID        EventID = 6
-	UserKilledBossEventID              EventID = 7
-	UserLeftDungeonEventID             EventID = 8
-	UserCantContinueDueToReasonEventID EventID = 9
-	UserRestoredHealthEventID          EventID = 10
-	UserReceivedDamageEventID          EventID = 11
+	BaseEventID EventID = iota
+	UserRegisteredEventID
+	UserEnteredDungeonEventID
+	UserKilledMonsterEventID
+	UserWentToNextFloorEventID
+	UserWentToPreviousFloorEventID
+	UserEnteredBossFloorEventID
+	UserKilledBossEventID
+	UserLeftDungeonEventID
+	UserCantContinueDueToReasonEventID
+	UserRestoredHealthEventID
+	UserReceivedDamageEventID
 )
 
 const (
@@ -27,11 +27,13 @@ const (
 
 type Event interface {
 	ID() EventID
+	GetEventID() int
 	GetTimestamp() time.Time
 	GetUserID() int
 }
 
 type BaseEvent struct {
+	EventID   int       `json:"event_id"`
 	Timestamp time.Time `json:"timestamp"`
 	UserID    int       `json:"user_id"`
 }
@@ -45,4 +47,7 @@ func (b BaseEvent) GetTimestamp() time.Time {
 }
 func (b BaseEvent) GetUserID() int {
 	return b.UserID
+}
+func (b BaseEvent) GetEventID() int {
+	return b.EventID
 }

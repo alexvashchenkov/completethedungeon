@@ -82,6 +82,7 @@ A player is participating in a challenge. The goal is to completely clear a dung
 [14:10:00] Player [2] entered the dungeon
 [14:10:00] Player [3] is disqualified
 [14:11:00] Player [2] makes imposible move [5]
+[14:11:00] Player [3] makes imposible move [3]
 [14:14:00] Player [2] killed the monster
 [14:27:00] Player [2] recieved [60] of damage
 [14:29:00] Player [2] recieved [50] of damage

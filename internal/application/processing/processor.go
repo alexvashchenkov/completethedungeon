@@ -24,3 +24,7 @@ func (p *Processor) Process(session *models.PlayerSession, event events.Event) (
 
 	return handler.Handle(session, event)
 }
+
+func (p *Processor) RegisterHandler(eventID events.EventID, handler EventHandler) {
+	p.handlers[eventID] = handler
+}
